@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build",
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap --config sitemap.config.js",
@@ -26,6 +27,10 @@
     "@mantine/carousel": "^7.17.1",
     "@mantine/core": "^7.17.1",
     "@mantine/hooks": "^7.17.1",
+    "@nextui-org/button": "^2.2.9",
+    "@nextui-org/card": "^2.2.9",
+    "@nextui-org/input": "^2.4.8",
+    "@nextui-org/react": "^2.6.11",
     "@portabletext/react": "^3.2.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.16",
