@@ -10,6 +10,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,7 +24,15 @@ jobs:
         run: npm ci
 
       - name: Build and export
-        run: npm run build
+        run: |
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          export GITHUB_SECRET=dummy
+          export GITHUB_ID=dummy
+          export GITHUB_USERNAME=dummy
+          export GITHUB_REPO=dummy
+          export GITHUB_BRANCH=main
+          export GEMINI_API_KEY=dummy
+          npm run build
 
       - name: Add .nojekyll
         run: touch out/.nojekyll
@@ -33,3 +42,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+
